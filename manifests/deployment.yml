@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rowererpythonappwithazurekubernetes 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rowererpythonappwithazurekubernetes
+  template:
+    metadata:
+      labels:
+        app: rowererpythonappwithazurekubernetes 
+    spec:
+      containers:
+        - name: rowererpythonappwithazurekubernetes 
+          image: crtestrower.azurecr.io/rowererpythonappwithazurekubernetes
+          ports:
+          - containerPort: 5000
